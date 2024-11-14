@@ -12,6 +12,8 @@ const posts = await getCollection('posts', ({ data }: any) => {
         ? data.isDraft !== true && data.isPublic === true
         : true;
 });
+posts.sort((post1: any, post2: any) => new Date(post2.data.publishDate).getTime() - new Date(post1.data.publishDate).getTime())
+
 ---
 
 <BaseLayout pageTitle='Home'>

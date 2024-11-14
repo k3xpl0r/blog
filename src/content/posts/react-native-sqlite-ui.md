@@ -11,7 +11,7 @@ Debugging SQLite on React Native can be hard as its not a typical DB where we co
 
 First we'll setup a basic React Native project using Expo.
 
-NOTE: There are some issues running *expo-drizzle-studio-plugin* as of this writing with latest expo SDK 52 with new architecture - [Github Issue](https://github.com/drizzle-team/drizzle-studio-expo/issues/4). 
+NOTE: There are some issues running *expo-drizzle-studio-plugin* as of this writing with latest expo SDK 52 with new architecture - [Github Issue](https://github.com/drizzle-team/drizzle-studio-expo/issues/4).
 
 Tested this plugin with react-native: 0.74.5, expo: 51.0.37, expo-sqlite: 14.0.6, expo-drizzle-studio-plugin: 0.0.2
 
@@ -19,7 +19,7 @@ Tested this plugin with react-native: 0.74.5, expo: 51.0.37, expo-sqlite: 14.0.6
 npx create-expo-app@latest
 ```
 
-For the SQLite I'm using expo-sqlite but other flavors of SQLite should also work. 
+For the SQLite I'm using expo-sqlite but other flavors of SQLite should also work.
 
 ```bash
 npx expo install expo-sqlite
