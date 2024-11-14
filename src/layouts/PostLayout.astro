@@ -1,0 +1,50 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { postTitle, postPublishDate, postTags } = Astro.props;
+---
+
+<BaseLayout showBack={true} pageTitle={postTitle}>
+    <article class='prose max-w-none dark:prose-invert'>
+        <h1>{postTitle}</h1>
+        <div class='post-preview-meta-data'>
+            <div class='post-preview-tags'>
+                {
+                    postTags.map((postTag: any) => (
+                        <span class='post-preview-tag'>#{postTag}</span>
+                    ))
+                }
+            </div>
+            <div class='post-preview-date'>
+                <p class='m-0'>
+                    Published: {postPublishDate.toISOString().split('T')[0]}
+                </p>
+            </div>
+        </div>
+        <slot />
+    </article>
+</BaseLayout>
+
+<style>
+    .post-preview-tags {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .post-preview-tag {
+        color: azure;
+        font-size: 1rem;
+    }
+    .post-preview-meta-data {
+        display: flex;
+        justify-content: space-between;
+    }
+    .post-preview-date {
+        color:azure;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        margin: 0px;
+    }
+</style>

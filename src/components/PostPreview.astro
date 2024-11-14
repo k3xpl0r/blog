@@ -1,0 +1,68 @@
+---
+const { postUrl, postTitle, postDescription, postPublishDate, postTags } =
+    Astro.props;
+---
+
+<a href={postUrl} class="hover:opacity-75">
+    <div class='post-preview'>
+        <div class='post-title'>
+            <h1>{postTitle}</h1>
+        </div>
+        <div class='post-description'>
+            <p>{postDescription}</p>
+        </div>
+        <div class='post-preview-meta-data'>
+            <div class='post-preview-tags'>
+                {
+                    postTags.map((postTag: any) => (
+                        <span class='post-preview-tag'>#{postTag}</span>
+                    ))
+                }
+            </div>
+            <div class='post-preview-date'>
+                <p>{postPublishDate.toISOString().split('T')[0]}</p>
+            </div>
+        </div>
+    </div>
+</a>
+
+<style>
+    .post-preview {
+        border: 2px solid #ffffff1b;
+        border-radius: 20px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+    .post-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .post-description {
+        max-height: 3.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.8rem;
+        color: grey;
+    }
+    .post-preview-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .post-preview-tag {
+        font-size: 0.7rem;
+    }
+    .post-preview-meta-data {
+        display: flex;
+        justify-content: space-between;
+    }
+    .post-preview-date {
+        font-size: 0.7rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+</style>

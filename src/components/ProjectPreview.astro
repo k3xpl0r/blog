@@ -1,0 +1,39 @@
+---
+const { projectUrl, projectTitle, projectDescription } = Astro.props;
+---
+
+<a href={projectUrl} class="hover:opacity-75">
+    <div class='project-preview'>
+        <div class='project-title'>
+            <h1>{projectTitle}</h1>
+        </div>
+        <div class='project-description'>
+            <p>
+                {projectDescription}
+            </p>
+        </div>
+    </div>
+</a>
+
+<style>
+    .project-preview {
+        border: 2px solid #ffffff1b;
+        border-radius: 5px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        cursor: pointer;
+    }
+    .project-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .project-description {
+        max-height: 3.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.8rem;
+        color: grey;
+    }
+</style>

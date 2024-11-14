@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/src/layouts/BaseLayout.astro';
+
+import PostPreview from '@/src/components/PostPreview.astro';
+
+import ProjectPreview from '@/src/components/ProjectPreview.astro';
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }: any) => {
+    return import.meta.env.PROD
+        ? data.isDraft !== true && data.isPublic === true
+        : true;
+});
+---
+
+<BaseLayout pageTitle='Home'>
+    <div class='home-content w-full'>
+        <div class='home-item'>
+            <div class='page-title prose max-w-none dark:prose-invert'>
+                <h1>Posts</h1>
+            </div>
+            <div class='posts'>
+                {
+                    posts.map((post: any) => (
+                        <PostPreview
+                            postUrl={`/posts/${post.id}`}
+                            postTitle={post.data.title}
+                            postDescription={post.data.description}
+                            postPublishDate={post.data.publishDate}
+                            postTags={post.data.tags}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class='home-item'>
+            <div class='page-title prose max-w-none dark:prose-invert'>
+                <h1>Projects</h1>
+            </div>
+            <div class='projects'>
+                <ProjectPreview
+                    projectTitle={'Test project'}
+                    projectDescription={'A placeholder project'}
+                />
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .page-title {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+</style>

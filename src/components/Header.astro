@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import logo from '@/src/assets/images/digzest-logo.svg';
+---
+
+<header class="w-full">
+    <div class='nav-container'>
+        <div class='nav-logo'>
+            <a href='/'>
+                <Image src={logo} alt='website logo' width={100} height={100} />
+            </a>
+        </div>
+        <div class='nav-menu'>
+            <a class='nav-menu-item' href='/posts'>Posts</a>
+            <a class='nav-menu-item' href='/projects'>Projects</a>
+        </div>
+    </div>
+    <hr />
+</header>
+
+<style>
+    header {
+        margin-bottom: 2rem;
+    }
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+    .nav-logo {
+        display: flex;
+        align-items: center;
+    }
+    .nav-menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+    .nav-menu-item {
+        color: white;
+        padding: 0.7rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+</style>

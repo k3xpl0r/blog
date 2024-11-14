@@ -1,0 +1,31 @@
+{
+    "name": "blog",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "0.9.4",
+        "@astrojs/tailwind": "5.1.2",
+        "astro": "5.0.0-beta.5",
+        "remark-toc": "^9.0.0",
+        "tailwindcss": "^3.4.14",
+        "typescript": "^5.6.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.15",
+        "@typescript-eslint/parser": "^8.8.1",
+        "eslint": "^9.12.0",
+        "eslint-plugin-astro": "^1.2.4",
+        "eslint-plugin-jsx-a11y": "^6.10.0",
+        "postcss-html": "^1.7.0",
+        "prettier": "^3.3.3",
+        "prettier-plugin-astro": "^0.14.1",
+        "stylelint-config-html": "^1.1.0"
+    }
+}

@@ -1,0 +1,47 @@
+---
+import Header from '@/src/components/Header.astro';
+const { pageTitle, showBack } = Astro.props;
+---
+
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width' />
+        <meta name='generator' content={Astro.generator} />
+        <meta name='robots' content='noindex' />
+        <title>{pageTitle}</title>
+    </head>
+    <body class="max-w-3xl mx-auto">
+        <div class='mx-6 my-5'>
+            <Header />
+            {
+                showBack && (
+                    <div class='flex mb-5'>
+                        <button
+                            onclick='history.back()'
+                            class='flex focus-outline hover:opacity-75'>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                viewBox="6 -3 20 22"
+                                fill='currentColor'
+                                width="1.25rem"
+                                height="1.25rem"
+                                stroke='currentColor'>
+                                <path d='M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z'/>
+                            </svg>
+                            <span class='text-lg'>Back</span>
+                        </button>
+                    </div>
+                )
+            }
+            <slot />
+        </div>
+    </body>
+    <style>
+        * {
+            box-sizing: border-box;
+            color: white;
+            background-color: #18171b;
+        }
+    </style>
+</html>
