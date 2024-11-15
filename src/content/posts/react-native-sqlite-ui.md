@@ -84,5 +84,5 @@ As of this writing, it has note worthy features like
 
 ### References
 
-- https://docs.expo.dev/versions/latest/sdk/sqlite/
-- https://github.com/drizzle-team/drizzle-studio-expo
+- <https://docs.expo.dev/versions/latest/sdk/sqlite/>
+- <https://github.com/drizzle-team/drizzle-studio-expo>
